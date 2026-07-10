@@ -1,25 +1,48 @@
 {
+  "manifest_version": 3,
   "short_name": "Okta Dark",
   "name": "Okta Dark Mode",
+  "description": "Toggle a dark color scheme across supported Okta pages, including dynamically rendered and shadow-DOM navigation.",
+  "version": "2.2.0",
+  "minimum_chrome_version": "102",
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Toggle Okta Dark Mode",
+    "default_icon": {
+      "16": "icons/logo-medium16.png",
+      "48": "icons/logo-medium48.png",
+      "128": "icons/logo-medium128.png"
+    }
   },
   "icons": {
     "16": "icons/logo-medium16.png",
-    "48": "icons/logo-medium16.png",
+    "48": "icons/logo-medium48.png",
     "128": "icons/logo-medium128.png"
   },
   "permissions": [
     "activeTab",
-    "tabs",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
     "https://*.oktapreview.com/*",
     "https://*.okta.com/*",
     "https://*.okta-emea.com/*"
   ],
-  "manifest_version": 2,
-  "browser_action": {
-    "default_title": "Okta Dark"
-  },
-  "version": "1.0"
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.oktapreview.com/*",
+        "https://*.okta.com/*",
+        "https://*.okta-emea.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
 }
