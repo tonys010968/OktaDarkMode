@@ -1,4 +1,63 @@
-* {
-  background-color: black !important;
-  color: #888 !important;
+/* Broad fallback for classic Okta pages. */
+html,
+body,
+body * {
+  background-color: #111 !important;
+  color: #b8b8b8 !important;
+  border-color: #3a3a3a !important;
+}
+
+/* Okta Admin Console navigation and common sidebar containers. */
+nav,
+aside,
+[role="navigation"],
+[class*="sidebar" i],
+[class*="side-nav" i],
+[class*="sidenav" i],
+[class*="navigation" i],
+[class*="nav-container" i],
+[id*="sidebar" i],
+[id*="navigation" i],
+nav *,
+aside *,
+[role="navigation"] * {
+  background-color: #171717 !important;
+  color: #d0d0d0 !important;
+  border-color: #3a3a3a !important;
+}
+
+/* Keep links and selected navigation entries readable. */
+a,
+a:visited,
+button,
+[role="button"] {
+  color: #c7c7c7 !important;
+}
+
+a:hover,
+button:hover,
+[role="button"]:hover,
+[aria-current="page"],
+[class*="active" i],
+[class*="selected" i] {
+  background-color: #292929 !important;
+  color: #fff !important;
+}
+
+/* Preserve images and icons instead of painting their pixels black. */
+img,
+svg,
+svg *,
+canvas,
+video {
+  background-color: transparent !important;
+}
+
+input,
+textarea,
+select,
+option {
+  background-color: #202020 !important;
+  color: #eee !important;
+  border-color: #555 !important;
 }
