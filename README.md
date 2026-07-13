@@ -23,7 +23,5 @@ This version uses:
 
 Supported domains are `*.okta.com`, `*.oktapreview.com` and `*.okta-emea.com`.
 
-![Screenshot](darkmode.png)
-
 ## Version 2.2
 Adds a content script that watches Okta's React interface and applies dark styling to navigation components created after page load, including components inside open Shadow DOM roots.
